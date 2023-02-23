@@ -24,6 +24,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -54,8 +56,16 @@ function Section({children, title}: SectionProps): JSX.Element {
     </View>
   );
 }
+interface AppProps {
+  dispatchInit: () => void
+}
+const App: React.FC<AppProps> = ({ dispatchInit }) => {
 
-function App(): JSX.Element {
+  React.useEffect(() => {
+    dispatchInit();
+  }, []);
+
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -80,7 +90,7 @@ function App(): JSX.Element {
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
-          <Section title="See Your Changes">
+          <Section title="See Your Changes +popo+">
             <ReloadInstructions />
           </Section>
           <Section title="Debug">
@@ -94,7 +104,7 @@ function App(): JSX.Element {
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   sectionContainer: {
@@ -115,4 +125,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default connect(null, (dispatch: Dispatch) => {
+  return {
+    dispatchInit: () => {
+      dispatch({ type: "INIT"})
+    }
+  }
+})(App);
