@@ -1,7 +1,7 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
-  abc: (s) => null
+	abc: () => null
 });
 
 export default rootReducer;
