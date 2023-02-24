@@ -4,11 +4,11 @@ import { App } from "./App.layout";
 import { init } from "../../actions";
 
 function mapDispatchToProps(dispatch: Dispatch) {
-  return {
-    dispatchInit: () => {
-      dispatch(init());
-    }
-  };
+	return {
+		dispatchInit: () => {
+			dispatch(init());
+		}
+	};
 }
 
 export default connect(null, mapDispatchToProps)(App);

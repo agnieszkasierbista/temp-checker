@@ -3,6 +3,14 @@ import reducers from "./reducers";
 import { rootEpic } from "./epics";
 import { createEpicMiddleware } from "redux-observable";
 
+export interface State {
+	temperatureChart: {isVisible: boolean}
+}
+
+const preloadedState = {
+	temperatureChart: {isVisible: false}
+};
+
 const epicMiddleware = createEpicMiddleware();
 
 export const store = configureStore({
@@ -11,6 +19,7 @@ export const store = configureStore({
 		getDefaultMiddleware({
 			serializableCheck: false,
 		}).concat(epicMiddleware),
+	preloadedState
 });
 
 epicMiddleware.run(rootEpic);
