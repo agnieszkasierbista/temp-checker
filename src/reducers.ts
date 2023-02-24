@@ -36,12 +36,18 @@ const temperatureChartReducer: Reducer = (state = {}, action: AnyAction) => {
 		};
 	}
 
+	case "SEARCH_FAILED": {
+		return {
+			...state,
+			isVisible: true,
+			isCityFound: false,
+			data: action.payload
+		};
+	}
 
 	default:
 		return state;
 	}
-
-
 };
 
 const rootReducer = combineReducers({
