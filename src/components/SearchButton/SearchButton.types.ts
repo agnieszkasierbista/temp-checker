@@ -1,3 +1,4 @@
 export interface SearchButtonProps {
-  dispatchToggleVisibility: () => void
+  dispatchSearch: (userInput: string) => void,
+  userInput: string
 }

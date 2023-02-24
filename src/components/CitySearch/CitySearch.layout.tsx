@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
 
 
 export const CitySearch = () => {
+
+	const [userInput,setUserInput] = React.useState("");
+
 	return (
 		<View
 			style={styles.container}
@@ -24,9 +27,16 @@ export const CitySearch = () => {
 			<TextInput
 				style={styles.input}
 				placeholder="Search"
-				value="London"
+				onChangeText={(userInput) => {
+					console.log(123, userInput);
+
+					setUserInput(userInput);
+				}}
+				value={userInput}
 			/>
-			<SearchButton />
+			<SearchButton
+				userInput={userInput}
+			/>
 		</View>
 	);
 };

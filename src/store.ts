@@ -4,7 +4,12 @@ import { rootEpic } from "./epics";
 import { createEpicMiddleware } from "redux-observable";
 
 export interface State {
-	temperatureChart: {isVisible: boolean}
+	temperatureChart: {
+		isVisible: boolean,
+		isCityFound: boolean
+		data: any
+		searchedString: string
+	}
 }
 
 const preloadedState = {

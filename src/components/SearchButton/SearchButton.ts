@@ -1,13 +1,11 @@
 import { SearchButton } from "./SearchButton.layout";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { toggle } from "../../actions";
+import { search } from "../../actions";
 
 function mapDispatchToProps(dispatch: Dispatch) {
 	return {
-		dispatchToggleVisibility: () => {
-			dispatch(toggle());
-		}
+		dispatchSearch: (userInput: string) => dispatch(search(userInput))
 	};
 }
 

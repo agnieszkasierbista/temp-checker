@@ -4,7 +4,10 @@ import { TemperatureChart } from "./TemperatureChart.layout";
 
 function mapStateToProps(state: State) {
 	return {
-		isVisible: state.temperatureChart.isVisible
+		isVisible: state.temperatureChart.isVisible,
+		isCityFound: state.temperatureChart.isCityFound,
+		data: state.temperatureChart.data,
+		searchedString: state.temperatureChart.searchedString
 	};
 }
 
