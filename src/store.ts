@@ -2,12 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import reducers from "./reducers";
 import { rootEpic } from "./epics";
 import { createEpicMiddleware } from "redux-observable";
+import { ResponseData } from "./types";
 
 export interface State {
 	temperatureChart: {
 		isVisible: boolean,
 		isCityFound: boolean
-		data: any
+		data: ResponseData
 		searchedString: string,
 		isSearching: boolean
 	}

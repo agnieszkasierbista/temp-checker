@@ -56,8 +56,8 @@ export const TemperatureChart: React.FC<TemperatureChartProps> = (props) => {
 				</View>
 				:
 				props.searchedString.length
-				?
-				<NonexistentCityMessage />
+					?
+					<NonexistentCityMessage />
 					:
 					<NoInputMessage />
 			:

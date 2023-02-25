@@ -1,3 +1,5 @@
+import { ResponseData } from "./types";
+
 export const INIT = "INIT";
 export const TOGGLE = "TOGGLE";
 export const SEARCH = "SEARCH";
@@ -23,7 +25,7 @@ export function search(userInput: string) {
 	};
 }
 
-export function searchSuccess(data: any) {
+export function searchSuccess(data: ResponseData) {
 	return {
 		type: SEARCH_SUCCESS,
 		payload: data

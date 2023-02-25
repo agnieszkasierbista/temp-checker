@@ -1,6 +1,8 @@
+import { ResponseData } from "../../types";
+
 export interface TemperatureChartProps {
   isVisible: boolean
   isCityFound: boolean
-  data: any,
+  data: ResponseData,
   searchedString: string
 }

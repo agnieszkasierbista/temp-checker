@@ -7,7 +7,7 @@ import { State } from "../../store";
 function mapStateToProps(state: State) {
 	return {
 		isSearching: state.temperatureChart.isSearching
-	}
+	};
 }
 
 function mapDispatchToProps(dispatch: Dispatch) {

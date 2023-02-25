@@ -24,6 +24,7 @@ const temperatureChartReducer: Reducer = (state = {}, action: AnyAction) => {
 		return {
 			...state,
 			searchedString: action.payload,
+			isVisible: false,
 			isSearching: true
 		};
 	}
