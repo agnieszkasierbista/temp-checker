@@ -1,15 +1,15 @@
 import React from "react";
 import { Dimensions, Text, View } from "react-native";
 import { BarChart } from "react-native-chart-kit";
-import { TemperatureChartProps } from "./TemperatureChart.types";
+import { ChartData, TemperatureChartProps } from "./TemperatureChart.types";
 import NonexistentCityMessage from "../NonexistentCityMessage/NonexistentCityMessage";
 import NoInputMessage from "../NoInputMessage/NoInputMessage";
 
 export const TemperatureChart: React.FC<TemperatureChartProps> = (props) => {
 
-	const temperature= props.isCityFound && props.data.main.temp;
+	const temperature= props.weatherData?.main.temp || 0;
 
-	const data = {
+	const data: ChartData = {
 		labels: [props.searchedString],
 		datasets: [
 			{

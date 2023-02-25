@@ -6,7 +6,7 @@ function mapStateToProps(state: State) {
 	return {
 		isVisible: state.temperatureChart.isVisible,
 		isCityFound: state.temperatureChart.isCityFound,
-		data: state.temperatureChart.data,
+		weatherData: state.temperatureChart.weatherData,
 		searchedString: state.temperatureChart.searchedString
 	};
 }
