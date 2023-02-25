@@ -1,4 +1,5 @@
 export interface SearchButtonProps {
   dispatchSearch: (userInput: string) => void,
-  userInput: string
+  userInput: string,
+  isSearching: boolean
 }

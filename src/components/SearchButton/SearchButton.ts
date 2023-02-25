@@ -2,6 +2,13 @@ import { SearchButton } from "./SearchButton.layout";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { search } from "../../actions";
+import { State } from "../../store";
+
+function mapStateToProps(state: State) {
+	return {
+		isSearching: state.temperatureChart.isSearching
+	}
+}
 
 function mapDispatchToProps(dispatch: Dispatch) {
 	return {
@@ -9,4 +16,4 @@ function mapDispatchToProps(dispatch: Dispatch) {
 	};
 }
 
-export default connect(null, mapDispatchToProps)(SearchButton);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchButton);
