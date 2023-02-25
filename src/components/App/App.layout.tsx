@@ -13,7 +13,9 @@ export const App: React.FC<AppProps> = (props) => {
 	return (
 		<SafeAreaView>
 			<StatusBar />
-			<ScrollView>
+			<ScrollView
+				keyboardShouldPersistTaps="handled"
+			>
 				<Text>
           Type the city name below:
 				</Text>

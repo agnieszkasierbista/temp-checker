@@ -1,5 +1,5 @@
 import { AnyAction, combineReducers, Reducer } from "@reduxjs/toolkit";
-import { INIT, SEARCH, SEARCH_SUCCESS, TOGGLE } from "./actions";
+import { INIT, SEARCH, SEARCH_FAILED, SEARCH_SUCCESS, TOGGLE } from "./actions";
 
 const temperatureChartReducer: Reducer = (state = {}, action: AnyAction) => {
 	switch (action.type) {
@@ -23,7 +23,8 @@ const temperatureChartReducer: Reducer = (state = {}, action: AnyAction) => {
 	case SEARCH: {
 		return {
 			...state,
-			searchedString: action.payload
+			searchedString: action.payload,
+			isSearching: true
 		};
 	}
 
@@ -32,16 +33,18 @@ const temperatureChartReducer: Reducer = (state = {}, action: AnyAction) => {
 			...state,
 			isVisible: true,
 			isCityFound: `${action.payload.cod}`  === "200",
-			data: action.payload
+			data: action.payload,
+			isSearching: false
 		};
 	}
 
-	case "SEARCH_FAILED": {
+	case SEARCH_FAILED: {
 		return {
 			...state,
 			isVisible: true,
 			isCityFound: false,
-			data: action.payload
+			data: action.payload,
+			isSearching: false
 		};
 	}
 

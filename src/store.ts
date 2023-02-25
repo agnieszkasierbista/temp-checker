@@ -8,12 +8,13 @@ export interface State {
 		isVisible: boolean,
 		isCityFound: boolean
 		data: any
-		searchedString: string
+		searchedString: string,
+		isSearching: boolean
 	}
 }
 
 const preloadedState = {
-	temperatureChart: {isVisible: false}
+	temperatureChart: {isVisible: false, isSearching: false}
 };
 
 const epicMiddleware = createEpicMiddleware();

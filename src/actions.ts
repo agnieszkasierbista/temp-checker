@@ -2,7 +2,7 @@ export const INIT = "INIT";
 export const TOGGLE = "TOGGLE";
 export const SEARCH = "SEARCH";
 export const SEARCH_SUCCESS = "SEARCH_SUCCESS";
-
+export const SEARCH_FAILED = "SEARCH_FAILED";
 
 export function init() {
 	return {
@@ -29,3 +29,12 @@ export function searchSuccess(data: any) {
 		payload: data
 	};
 }
+
+export function searchFailed(errorCode: { cod: string | undefined }) {
+	return {
+		type: "SEARCH_FAILED",
+		payload: errorCode
+	};
+}
+
+

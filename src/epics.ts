@@ -1,6 +1,6 @@
 import { combineEpics, Epic, ofType } from "redux-observable";
 import { catchError, EMPTY, from, map, of, switchMap } from "rxjs";
-import { SEARCH, searchSuccess } from "./actions";
+import { SEARCH, searchFailed, searchSuccess } from "./actions";
 import axios, { AxiosError } from "axios";
 
 export const onInit: Epic = action$ => action$.pipe(
@@ -21,7 +21,7 @@ export const onSearch: Epic = action$ => action$.pipe(
 				return searchSuccess(response.data);
 			}),
 			catchError((e: AxiosError<{ cod: string, message: string }>) => {
-				return of({ type: "SEARCH_FAILED", payload: { cod: e.response?.data?.cod } });
+				return of(searchFailed({ cod: e.response?.data?.cod }));
 			})
 		);
 	})
