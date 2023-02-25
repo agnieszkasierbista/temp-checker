@@ -3,6 +3,7 @@ import { Dimensions, Text, View } from "react-native";
 import { BarChart } from "react-native-chart-kit";
 import { TemperatureChartProps } from "./TemperatureChart.types";
 import NonexistentCityMessage from "../NonexistentCityMessage/NonexistentCityMessage";
+import NoInputMessage from "../NoInputMessage/NoInputMessage";
 
 export const TemperatureChart: React.FC<TemperatureChartProps> = (props) => {
 
@@ -54,7 +55,11 @@ export const TemperatureChart: React.FC<TemperatureChartProps> = (props) => {
 					/>
 				</View>
 				:
+				props.searchedString.length
+				?
 				<NonexistentCityMessage />
+					:
+					<NoInputMessage />
 			:
 			null
 
