@@ -1,16 +1,8 @@
 import { combineEpics, Epic, ofType } from "redux-observable";
-import { catchError, delay, EMPTY, from, map, of, switchMap } from "rxjs";
+import { catchError, delay, from, map, of, switchMap } from "rxjs";
 import { SEARCH, searchFailed, searchSuccess } from "./actions";
 import axios, { AxiosResponse } from "axios";
 import { ResponseData } from "./types";
-
-export const onInit: Epic = action$ => action$.pipe(
-	ofType("INIT"),
-	switchMap(() => {
-		console.log("INIT");
-		return EMPTY;
-	})
-);
 
 export const onSearch: Epic = action$ => action$.pipe(
 	ofType(SEARCH),
@@ -34,7 +26,6 @@ export const onSearch: Epic = action$ => action$.pipe(
 );
 
 export const rootEpic: Epic = combineEpics(
-	onInit,
 	onSearch
 );
 
