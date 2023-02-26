@@ -22,6 +22,10 @@ module.exports = {
 		"@typescript-eslint"
 	],
 	"rules": {
+		"no-multiple-empty-lines": [
+			"error",
+			{ max: 1 }
+		],
 		"indent": [
 			"error",
 			"tab"
