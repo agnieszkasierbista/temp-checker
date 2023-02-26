@@ -5,9 +5,11 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "eslint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "check-types": "tsc --noEmit",
+    "lint": " npm run check-types && npm run eslint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
