@@ -17,4 +17,3 @@ export const SearchButton: React.FC<SearchButtonProps> = (props) => {
 		</View>
 	);
 };
-
