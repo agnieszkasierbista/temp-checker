@@ -1,14 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-
-const styles = StyleSheet.create({
-	container: {
-		padding: 20
-	},
-	bold: {
-		fontWeight: "bold"
-	}
-});
+import { Text, View } from "react-native";
+import { styles } from "./NoInputMessage.styles";
 
 export const NoInputMessage = () => {
 	return (

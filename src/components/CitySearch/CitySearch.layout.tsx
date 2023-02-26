@@ -1,20 +1,7 @@
 import React from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import { TextInput, View } from "react-native";
 import SearchButton from "../SearchButton/SearchButton";
-
-const styles = StyleSheet.create({
-	container: {
-		marginBottom: 15
-	},
-	input: {
-		fontSize: 20,
-		margin: 10,
-		padding: 10,
-		width: "95%",
-		borderWidth: 1
-	}
-});
-
+import { styles } from "./CistySearch.styles";
 
 export const CitySearch = () => {
 
@@ -28,8 +15,6 @@ export const CitySearch = () => {
 				style={styles.input}
 				placeholder="Search"
 				onChangeText={(userInput) => {
-					console.log(123, userInput);
-
 					setUserInput(userInput);
 				}}
 				value={userInput}

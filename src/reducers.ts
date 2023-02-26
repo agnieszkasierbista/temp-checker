@@ -61,7 +61,6 @@ const temperatureChartReducer: Reducer<TemperatureChartState> = (state = initial
 			...state,
 			isVisible: true,
 			isCityFound: false,
-			data: action.payload,
 			isSearching: false
 		};
 	}

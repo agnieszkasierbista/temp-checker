@@ -1,15 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { NonexistentCityMessageProps } from "./NonexistentCityMessageProps.types";
-
-const styles = StyleSheet.create({
-	container: {
-		padding: 20
-	},
-	bold: {
-		fontWeight: "bold"
-	}
-});
+import { styles } from "./NonexistentCityMessage.styles";
 
 export const NonexistentCityMessage: React.FC<NonexistentCityMessageProps> = (props) => {
 	return (

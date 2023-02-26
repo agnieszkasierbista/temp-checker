@@ -7,7 +7,7 @@ import NoInputMessage from "../NoInputMessage/NoInputMessage";
 
 export const TemperatureChart: React.FC<TemperatureChartProps> = (props) => {
 
-	const temperature= props.weatherData?.main.temp || 0;
+	const temperature = props.weatherData?.main.temp || 0;
 
 	const data: ChartData = {
 		labels: [props.searchedString],
@@ -37,11 +37,15 @@ export const TemperatureChart: React.FC<TemperatureChartProps> = (props) => {
 		}
 	};
 
-	return (
-		props.isVisible
-			?
-			props.isCityFound
-				?
+	const noCityFound = (
+		props.searchedString.length
+			? <NonexistentCityMessage />
+			: <NoInputMessage />
+	);
+
+	const visibleResponse = (
+		props.isCityFound
+			? (
 				<View>
 					<Text>Temperature chart</Text>
 					<BarChart
@@ -54,14 +58,13 @@ export const TemperatureChart: React.FC<TemperatureChartProps> = (props) => {
 						fromZero={true}
 					/>
 				</View>
-				:
-				props.searchedString.length
-					?
-					<NonexistentCityMessage />
-					:
-					<NoInputMessage />
-			:
-			null
+			)
+			: noCityFound
+	);
 
+	return (
+		props.isVisible
+			? visibleResponse
+			: null
 	);
 };

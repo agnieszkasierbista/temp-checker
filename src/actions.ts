@@ -32,10 +32,9 @@ export function searchSuccess(data: ResponseData) {
 	};
 }
 
-export function searchFailed(errorCode: { cod: string | undefined }) {
+export function searchFailed() {
 	return {
-		type: "SEARCH_FAILED",
-		payload: errorCode
+		type: SEARCH_FAILED
 	};
 }
 
