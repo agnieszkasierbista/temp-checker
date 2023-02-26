@@ -1,5 +1,5 @@
-import { AnyAction, combineReducers, Reducer } from "@reduxjs/toolkit";
-import { SEARCH, SEARCH_FAILED, SEARCH_SUCCESS, TOGGLE } from "./actions";
+import { combineReducers, Reducer } from "@reduxjs/toolkit";
+import { SEARCH, SEARCH_FAILED, SEARCH_SUCCESS, TemperatureChartActions, TOGGLE } from "./actions";
 import { ResponseData } from "./types";
 
 interface TemperatureChartState {
@@ -18,7 +18,7 @@ export const initialTemperatureChartState: TemperatureChartState = {
 	searchedString: ""
 };
 
-const temperatureChartReducer: Reducer<TemperatureChartState> = (state = initialTemperatureChartState, action: AnyAction) => {
+const temperatureChartReducer: Reducer<TemperatureChartState, TemperatureChartActions> = (state = initialTemperatureChartState, action) => {
 	switch (action.type) {
 
 	case TOGGLE: {
